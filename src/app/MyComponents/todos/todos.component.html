@@ -3,7 +3,7 @@
    <h4 class="my-2">Your Todos</h4>
    <div *ngIf="this.todos.length===0 ; else elseBlock">No Todos</div>
    <ng-template #elseBlock>
-   <div *ngFor="let todo of todos;index as i">
+   <div *ngFor="let todo of todos;let i=index;">
       <app-todo-item [todo]="todo" [i]="i" (todoDelete)="deleteTodo($event)" (todoCheckbox)="toggleTodo($event)"></app-todo-item>
    </div>
    </ng-template>
